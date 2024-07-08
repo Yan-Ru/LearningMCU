@@ -15,7 +15,7 @@ void I2C_StructInit(I2C_InitTypeDef* I2C_InitStruct)
 	I2C_InitStruct->Timing          = I2C_TIMING;
 	I2C_InitStruct->AnalogFilter    = 0x00;
 	I2C_InitStruct->DigitalFilter   = 0x00;
-	I2C_InitStruct->OwnAddress1     = 0x00;
+	I2C_InitStruct->OwnAddress1     = 0x52;
 	I2C_InitStruct->TypeAcknowledge = 0x00;
 	I2C_InitStruct->OwnAddrSize     = 0x00;
 }
@@ -33,10 +33,7 @@ void I2C_Init(I2C_TypeDef *I2Cx, I2C_InitTypeDef *I2C_InitStruct)
 	I2Cx->CR1      |= 0x1;
 
 	I2Cx->OAR1     &= ~(1 << 15);
-	I2Cx->OAR1     &= ~(0x1111111111);
-
-
-
+	I2Cx->OAR1     |= (I2C_InitStruct->OwnAddress1 | I2C_InitStruct->OwnAddrSize << 10);
 
 }
 
