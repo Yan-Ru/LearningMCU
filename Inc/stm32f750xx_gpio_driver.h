@@ -1,0 +1,6 @@
+#ifndef STM32F750XX_I2C_DRIVER_H_
+#define STM32F750XX_I2C_DRIVER_H_
+
+#include "stm32f7xx.h"
+
+#endif /*STM32F750XX_I2C_DRIVER_H_*/

@@ -1,0 +1,6 @@
+{
+    "files.associations": {
+        "stm32f7xx.h": "c",
+        "stm32f750xx_i2c_driver.h": "c"
+    }
+}
